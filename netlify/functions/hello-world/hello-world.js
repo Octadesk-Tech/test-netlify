@@ -3,7 +3,7 @@
 const handler = async (event) => {
   try {
     const body =JSON.parse(JSON.parse(event.body))
-    const catalog = JSON.parse(JSON.parse(body.catalog))
+    // const catalog = JSON.parse(JSON.parse(body.catalog))
     // const items = catalog.items[0]    
     // // const response = {
     // //   "product_id":items.retailerId,
@@ -13,7 +13,7 @@ const handler = async (event) => {
     // // }
     return {
       statusCode: 200,
-      body: JSON.stringify(catalog),
+      body: JSON.stringify(body),
 
     }
   } catch (error) {
