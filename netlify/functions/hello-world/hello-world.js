@@ -13,7 +13,7 @@ const handler = async (event) => {
     // // }
     return {
       statusCode: 200,
-      body: JSON.stringify(catalog),
+      body: JSON.stringify(catalog.items),
 
     }
   } catch (error) {
