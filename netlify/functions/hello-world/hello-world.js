@@ -2,7 +2,7 @@
 
 const handler = async (event) => {
   try {
-    const body =JSON.parse(JSON.parse(event.body))
+    const body =JSON.parse(event.body)
     // const catalog = JSON.parse(JSON.parse(body.catalog))
     // const items = catalog.items[0]    
     // // const response = {
