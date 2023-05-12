@@ -1,7 +1,8 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+
 const handler = async (event) => {
   try {
-    const data = event.body
+    const data = JSON.parse(event).body
     console.log(event)
     // const response = {
     //   "product_id":data.retailerId,
@@ -12,7 +13,7 @@ const handler = async (event) => {
   
     return {
       statusCode: 200,
-      body: JSON.stringify(event),
+      body: JSON.stringify(data),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
