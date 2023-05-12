@@ -1,13 +1,14 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
   try {
-    const data = event.body
-    const response = {
-      "product_id":data.retailerId,
-      "price":data.price.amount,
-      "original_price":data.price.amount,
-      "quantity":data.quantity  
-    }
+    const data = event
+    const response = data
+    // const response = {
+    //   "product_id":data.retailerId,
+    //   "price":data.price.amount,
+    //   "original_price":data.price.amount,
+    //   "quantity":data.quantity  
+    // }
   
     return {
       statusCode: 200,
