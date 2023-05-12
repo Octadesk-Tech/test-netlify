@@ -3,16 +3,16 @@ const handler = async (event) => {
   try {
     const data = event.body
     console.log(event)
-    const response = {
-      "product_id":data.retailerId,
-      "price":data.price.amount,
-      "original_price":data.price.amount,
-      "quantity":data.quantity  
-    }
+    // const response = {
+    //   "product_id":data.retailerId,
+    //   "price":data.price.amount,
+    //   "original_price":data.price.amount,
+    //   "quantity":data.quantity  
+    // }
   
     return {
       statusCode: 200,
-      body: JSON.stringify(response),
+      body: JSON.stringify(event),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
