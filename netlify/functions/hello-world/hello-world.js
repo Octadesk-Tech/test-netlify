@@ -2,6 +2,7 @@
 const handler = async (event) => {
   try {
     const data = event.body
+    console.log(event)
     const response = {
       "product_id":data.retailerId,
       "price":data.price.amount,
