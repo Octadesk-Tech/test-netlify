@@ -2,22 +2,19 @@
 
 const handler = async (event) => {
   try {
-    // const data = JSON.parse(event).items[0]
-    // const response = {
-    //   "product_id":data.retailerId,
-    //   "price":data.price.amount,
-    //   "original_price":data.price.amount,
-    //   "quantity":data.quantity  
-    // }
-    // console.log(response)
-  
+    const items = JSON.parse(JSON.parse(event.body)).items[0]
+    const response = {
+      "product_id":items.retailerId,
+      "price":items.price.amount,
+      "original_price":items.price.amount,
+      "quantity":items.quantity  
+    }
     return {
       statusCode: 200,
-      body: typeof event,
+      body: JSON.stringify(response),
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
   }
 }
-handler()
 module.exports = { handler }
