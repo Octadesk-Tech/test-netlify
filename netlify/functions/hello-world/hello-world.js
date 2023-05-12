@@ -3,7 +3,7 @@
 const handler = async (event) => {
   try {
     const body =JSON.parse(event.body)
-    // const catalog = JSON.parse(JSON.parse(body.catalog))
+    const catalog = JSON.parse(body.catalog)
     // const items = catalog.items[0]    
     // // const response = {
     // //   "product_id":items.retailerId,
