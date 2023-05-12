@@ -6,15 +6,14 @@ const handler = async (event) => {
     const catalog = JSON.parse(JSON.parse(body.catalog))
     const items = catalog.items
     let result = []
-    for(let item in items) {
-      
+    items.forEach(item => {
       result.push({
         "product_id":item.retailerId,
         "price":item.price.amount,
         "original_price":item.price.amount,
         "quantity":item.quantity
       })
-    }
+    }) 
     return {
       statusCode: 200,
       body: JSON.stringify(result),
