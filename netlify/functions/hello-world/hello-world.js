@@ -5,14 +5,9 @@ const handler = async (event) => {
     const body =JSON.parse(event.body)
     const catalog = JSON.parse(JSON.parse(body.catalog))
     const items = catalog.items
-    const response = {
-      "product_id":items.retailerId,
-      "price":items.price.amount,
-      "original_price":items.price.amount,
-      "quantity":items.quantity
-    }
     let result = []
     for(let item in items) {
+      
       result.push({
         "product_id":item.retailerId,
         "price":item.price.amount,
