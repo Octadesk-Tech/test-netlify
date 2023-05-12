@@ -1,10 +1,17 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
   try {
-    const subject = event.queryStringParameters.name || 'World'
+    const data = event.body.items
+    const response = {
+      "product_id":data.retailerId,
+      "price":data.price.amount,
+      "original_price":data.price.amount,
+      "quantity":data.quantity  
+    }
+  
     return {
       statusCode: 200,
-      body: JSON.stringify(event),
+      body: JSON.stringify(response),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
