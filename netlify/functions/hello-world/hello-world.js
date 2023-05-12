@@ -2,7 +2,6 @@
 
 const handler = async (event) => {
   try {
-    conspole.log(event)
     // const data = JSON.parse(event).items[0]
     // const response = {
     //   "product_id":data.retailerId,
