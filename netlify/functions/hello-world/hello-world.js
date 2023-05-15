@@ -16,8 +16,7 @@ const handler = async (event) => {
     }) 
     return {
       statusCode: 200,
-      body: JSON.stringify(result),
-
+      body: JSON.stringify(JSON.stringify(result)),
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
