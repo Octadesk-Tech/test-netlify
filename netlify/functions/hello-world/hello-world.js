@@ -2,7 +2,7 @@
 const axios = require('axios');
 const handler = async (event) => {
   try {
-    const body = JSON.parse(JSON.parse(event.body))
+    const body = JSON.parse(event.body)
     const order = body.Order
     const token = body.access_token
     const catalog = JSON.parse(body.catalog)
