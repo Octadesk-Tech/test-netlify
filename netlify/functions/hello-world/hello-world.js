@@ -2,8 +2,8 @@
 
 const handler = async (event) => {
   try {
-    const body =JSON.parse(event.body)
-    const catalog = JSON.parse(JSON.parse(body.catalog))
+    const body = JSON.parse(JSON.parse(event.body))
+    const catalog = JSON.parse(body.catalog)
     const items = catalog.items
     let result = []
     items.forEach(item => {
@@ -16,7 +16,7 @@ const handler = async (event) => {
     }) 
     return {
       statusCode: 200,
-      body: JSON.stringify(result),
+      body: JSON.stringify(JSON.stringify(result)),
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
