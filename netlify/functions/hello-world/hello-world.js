@@ -1,7 +1,6 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const axios = require('axios');
 const handler = async (event) => {
-  consoll
   try {
     // const body = JSON.parse(event.body)
     // const order = JSON.parse(body.order)
