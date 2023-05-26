@@ -18,36 +18,7 @@ const handler = (event) => {
     });
 
     const trayURL = `https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=${token}`;
-    const trayObject = {
-      "Order":{
-        "point_sale":"Whastapp",
-        "shipment":"Retirar no local",
-        "Customer":{"type":"0",
-        "name":"Gabriel teste",
-        "cpf":"45062954800",
-        "email":"gabriel.miranda.rubio@gmail.com",
-        "phone":"+55 11 98471 4265",
-        "CustomerAddress":[{
-            "address":"Rua professor dario ribeiro",
-            "zip_code":"02559000",
-            "number":"937",
-            "complement":"",
-            "neighborhood":"Vila Prado",
-            "city":"São Paulo",
-            "state":"SP",
-            "country":"BRA",
-            "type": "1"
-            }
-        ]},
-        "ProductsSold":[{
-            "product_id":27,
-            "price":"150.00",
-            "original_price":"150.00",
-            "quantity":1  
-          }
-        ]
-      }    
-  };
+    const trayObject = JSON.stringify({ Order: order, ProductsSold: result });
   let trayResult = '123';
     axios.post(
       trayURL, trayObject,{
