@@ -51,7 +51,7 @@ const handler = async (event) => {
   let trayResult ;
     axios.post(
       trayURL, trayObject 
-    ).then((r) => {
+    ).then(function (response) {
 trayResult = r
     });
     return {
