@@ -51,7 +51,7 @@ const handler = async (event) => {
     const trayResult = await axios({
       method: "post",
       url: trayURL,
-      data: { ...trayObject },
+      data: trayObject ,
     });
     return {
       statusCode: 200,
