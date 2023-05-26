@@ -50,7 +50,7 @@ const handler = async (event) => {
   };
   console.log(trayObject)
   let trayResult = await axios.post(
-      trayURL, trayObject,{
+      trayURL, JSON.stringify(trayObject),{
         headers: {
             'Content-Type': 'application/json',
         }
@@ -58,7 +58,7 @@ const handler = async (event) => {
     )
 return {
   statusCode: 200,
-  body: JSON.stringify(trayResult.data),
+  body: JSON.stringify(trayResult),
 };
     
 
