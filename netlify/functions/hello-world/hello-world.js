@@ -18,7 +18,7 @@ const handler = (event) => {
     });
 
     const trayURL = `https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=${token}`;
-    const trayObject = JSON.stringify({
+    const trayObject = {
       "Order":{
         "point_sale":"Whastapp",
         "shipment":"Retirar no local",
@@ -47,7 +47,7 @@ const handler = (event) => {
           }
         ]
       }    
-  });
+  };
   let trayResult = '123';
     axios.post(
       trayURL, trayObject 
