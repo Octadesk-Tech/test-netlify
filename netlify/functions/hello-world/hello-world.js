@@ -53,11 +53,12 @@ const handler = async (event) => {
       trayURL, trayObject 
     ).then(function (response) {
 trayResult = response
+return {
+  statusCode: 200,
+  body: JSON.stringify(trayResult),
+};
     });
-    return {
-      statusCode: 200,
-      body: JSON.stringify(trayResult),
-    };
+
   } catch (error) {
     return { statusCode: 500, body: error.toString() };
   }
