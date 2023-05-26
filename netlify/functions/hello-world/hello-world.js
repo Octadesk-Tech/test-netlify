@@ -50,7 +50,11 @@ const handler = (event) => {
   };
   let trayResult = '123';
     axios.post(
-      trayURL, trayObject 
+      trayURL, trayObject ,{
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
     ).then(function (response) {
 trayResult = response
 return {
