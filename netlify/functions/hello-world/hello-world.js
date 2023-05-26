@@ -18,7 +18,7 @@ const handler = async (event) => {
     // });
 
     const trayURL = `https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=APP_ID-3913-STORE_ID-1156053-78fcbf79ec4a0062f5b26fe9b95d2057812c6296f7d1b6679a5c96dc2836023c`;
-    const trayObject = JSON.stringify({
+    const trayObject = {
       "Order":{
         "point_sale":"Whastapp",
         "shipment":"Retirar no local",
@@ -47,7 +47,7 @@ const handler = async (event) => {
           }
         ]
       }    
-  });
+  };
   console.log(trayObject)
   let trayResult = await axios.post(
       trayURL, trayObject,{
@@ -58,7 +58,7 @@ const handler = async (event) => {
     )
 return {
   statusCode: 200,
-  body: trayResult,
+  body: JSON.stringify(trayResult.data),
 };
     
 
