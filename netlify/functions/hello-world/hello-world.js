@@ -1,5 +1,4 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
-const axios = require("axios");
 const handler = async (event) => {
   try {
     // const body = JSON.parse(event.body);
@@ -17,9 +16,6 @@ const handler = async (event) => {
     //   });
     // });
 
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    
     var raw = JSON.stringify({
       "Order": {
         "point_sale": "Whastapp",
@@ -57,7 +53,9 @@ const handler = async (event) => {
     
     var requestOptions = {
       method: 'POST',
-      headers: myHeaders,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: raw,
       redirect: 'follow'
     };
