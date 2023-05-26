@@ -48,11 +48,11 @@ const handler = async (event) => {
         ]
       }    
   });
-  let trayResult ;
+  let trayResult = '123';
     axios.post(
       trayURL, trayObject 
     ).then(function (response) {
-trayResult = r
+trayResult = response
     });
     return {
       statusCode: 200,
