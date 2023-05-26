@@ -48,12 +48,12 @@ const handler = async (event) => {
         ]
       }    
   });
-  let trayResult 
+  let trayResult ;
     axios.post(
       trayURL, trayObject 
-    ).then(r) {
+    ).then((r) => {
 trayResult = r
-    };
+    });
     return {
       statusCode: 200,
       body: JSON.stringify(trayResult),
