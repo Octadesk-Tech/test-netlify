@@ -59,7 +59,7 @@ const handler = (event) => {
 trayResult = response
 return {
   statusCode: 200,
-  body: JSON.stringify(trayResult),
+  body: JSON.stringify(JSON.stringify(trayResult)),
 };
     });
 
