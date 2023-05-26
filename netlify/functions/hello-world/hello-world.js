@@ -48,14 +48,15 @@ const handler = async (event) => {
         ]
       }    
   });
-    const trayResult = await axios({
-      method: "post",
-      url: trayURL,
-      data: trayObject ,
-    });
+  let trayResult 
+    axios.post(
+      trayURL, trayObject 
+    ).then(r) {
+trayResult = r
+    };
     return {
       statusCode: 200,
-      body: JSON.stringify(trayObject),
+      body: JSON.stringify(trayResult),
     };
   } catch (error) {
     return { statusCode: 500, body: error.toString() };
