@@ -18,7 +18,7 @@ const handler = async (event) => {
     });
 
     const trayURL = `https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=${token}`;
-    const trayObject = { Order: order, ProductsSold: result };
+    const trayObject = JSON.stringify({ Order: order, ProductsSold: result });
     const trayResult = await axios({
       method: "post",
       url: trayURL,
@@ -26,7 +26,7 @@ const handler = async (event) => {
     });
     return {
       statusCode: 200,
-      body: JSON.stringify(trayResult),
+      body: JSON.stringify(trayObject),
     };
   } catch (error) {
     return { statusCode: 500, body: error.toString() };
