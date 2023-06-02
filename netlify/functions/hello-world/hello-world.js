@@ -31,7 +31,7 @@ const handler = async (event) => {
       body: raw,
       redirect: 'follow'
     };
-    let trayResult= await fetch("https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=APP_ID-3913-STORE_ID-1156053-78fcbf79ec4a0062f5b26fe9b95d2057812c6296f7d1b6679a5c96dc2836023c", requestOptions)
+    let trayResult= await fetch(`https://octadeskchat.commercesuite.com.br/web_api/orders?access_token=${token}`, requestOptions)
     trayResult = await trayResult.text()
 
 return {
